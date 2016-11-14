@@ -14,9 +14,9 @@ Whether you work in an organization that uses test-driven development or in an o
 
 1. Run a local http server
 
-```
-python -m SimpleHTTPServer
-```
+    ```
+    python -m SimpleHTTPServer
+    ```
 
 2. Open http://127.0.0.1:8000 in the browser.
 
