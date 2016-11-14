@@ -100,9 +100,31 @@ $(function() {
 
     /* suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
-        /* TODO: Write a test that ensures when a new feed is loaded
+        var $feedEntry0;
+        var $feedEntry1;
+
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+                console.log('Initial Entries: loadFeed 0 complted load');
+                $feedEntry0 = $('.feed .entry');
+                done();
+            });
+        });
+
+        beforeEach(function(done) {
+            loadFeed(1, function() {
+                console.log('Initial Entries: loadFeed 1 complted load');
+                $feedEntry1 = $('.feed .entry');
+                done();
+            });
+        });
+        /* ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+         it('when a new feed is loaded by the loadFeed function that the content actually changes.', function(done) {
+            expect($feedEntry0).not.toBe($feedEntry1);
+            done();
+         });
     });
 }());
